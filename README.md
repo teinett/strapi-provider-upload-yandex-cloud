@@ -5,17 +5,10 @@ Docs: https://cloud.yandex.com/en/docs/storage/
 
 ## Parameters
 
-YANDEX_CLOUD_ACCESS_KEY_ID=pg2ywMziH_9zeZfA7t3w
-YANDEX_CLOUD_ACCESS_SECRET="aTiO354YNpnO9zKjqBiP1U3nm3F3CoXGLYcldZBC"
-YANDEX_CLOUD_REGION="ru-central1"
-YANDEX_CLOUD_BUCKET="strapi-backet-test"
-
-key : Space access key
-secret : Space access secret
-endpoint : Base URL of the space (e.g. 'fra.digitaloceanspaces.com')
-space : Name of the space in the Digital Ocean panel.
-directory : Name of the sub-directory you want to store your files in. (Optionnal - e.g. '/example')
-cdn : CDN Endpoint - URL of the cdn of the space (Optionnal - e.g. 'https://cdn.example.com')
+- YANDEX_CLOUD_ACCESS_KEY_ID - key ID (no quotes, example: `pg2ywMziH_9zeZfA7t3w`)
+- YANDEX_CLOUD_ACCESS_SECRET - key secret (in quotes, example: `"aTiO354YNpnO9zKjqBiP1U3nm3F3CoXGLYcldZBC"`)
+- YANDEX_CLOUD_REGION - bucket region (in quotes, example: `"ru-central1"`)
+- YANDEX_CLOUD_BUCKET - bucket name (in quotes, example: `"strapi-backet-test"`)
 
 ## Example
 
