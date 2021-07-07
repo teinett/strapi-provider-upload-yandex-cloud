@@ -1,6 +1,6 @@
 {
   "name": "strapi-provider-upload-yandex-cloud",
-  "version": "3.6.5",
+  "version": "1.0.0",
   "description": "Yandex Cloud provider for Strapi upload plugin",
   "homepage": "http://strapi.io",
   "keywords": [
@@ -32,7 +32,7 @@
     "url": "https://github.com/teinett/strapi-provider-upload-yandex-cloud/issues"
   },
   "engines": {
-    "node": ">= 10.0.0",
+    "node": ">= 10.16.0",
     "npm": ">= 6.0.0"
   },
   "license": "MIT"
