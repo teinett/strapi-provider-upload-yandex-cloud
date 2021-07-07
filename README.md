@@ -1,6 +1,7 @@
 # Strapi Upload Provider for Yandex.Cloud Object Storage
 
 Yandex.Cloud: https://cloud.yandex.com/en/services/storage
+
 Docs: https://cloud.yandex.com/en/docs/storage/
 
 Pre-install: create Yandex.Cloud account and a bucket in Object storage.
@@ -39,7 +40,7 @@ After successful installation your package.json file will have a code:
 Go to code editor to yout project folder and create config file for your bucket: `./config/plugins.js` (file `plugins.js` in `config` folder in the root of your Strapi project) with the code:
 
 ```javascript
-module.exports = ({ env })=>({
+module.exports = ({ env }) => ({
   upload: {
     provider: 'yandex-cloud',
     providerOptions: {
