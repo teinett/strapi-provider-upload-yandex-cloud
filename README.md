@@ -3,6 +3,8 @@
 Yandex.Cloud: https://cloud.yandex.com/en/services/storage
 Docs: https://cloud.yandex.com/en/docs/storage/
 
+Pre-install: create Yandex.Cloud account and a bucket in Object storage.
+
 ## Parameters
 
 - YANDEX_CLOUD_ACCESS_KEY_ID - key ID (no quotes, example: `pg2ywMziH_9zeZfA7t3w`)
