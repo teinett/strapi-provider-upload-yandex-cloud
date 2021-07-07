@@ -13,9 +13,9 @@ Docs: https://cloud.yandex.com/en/docs/storage/
 ## Example
 
 :zero:
-Create Strapi project: `npx create-strapi-app strapi-yandex-cloud --quickstart`.
+Create Strapi project ([docs](https://strapi.io/documentation/developer-docs/latest/getting-started/quick-start.html)): `npx create-strapi-app strapi-yandex-cloud --quickstart`.
 
-After successful creating the project sopt the dev server: `CTRL + C`.
+After successful creating the project stop the dev server: `CTRL + C`.
 
 :one:
 Install upload plugin: `npm i -S strapi-provider-upload-yandex-cloud`.
