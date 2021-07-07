@@ -13,15 +13,28 @@ Docs: https://cloud.yandex.com/en/docs/storage/
 ## Example
 
 :zero:
-Create Strapi project ([docs](https://strapi.io/documentation/developer-docs/latest/getting-started/quick-start.html)): `npx create-strapi-app strapi-yandex-cloud --quickstart`.
+Create Strapi project ([docs](https://strapi.io/documentation/developer-docs/latest/getting-started/quick-start.html)): `npx create-strapi-app strapi-yandex-cloud-project --quickstart`.
 
-After successful creating the project stop the dev server: `CTRL + C`.
+After successfully creating the project stop the dev server: `CTRL + C`.
 
 :one:
 Install upload plugin: `npm i -S strapi-provider-upload-yandex-cloud`.
 
+Note: Be sure that you are in a folder with your Strapi project: `cd strapi-yandex-cloud-project`.
+
+After successful installation your package.json file will have a code:
+
+```
+"dependencies": {
+    ...
+    "strapi": "3.6.5",
+    "strapi-provider-upload-yandex-cloud": "1.0.0",
+    ...
+  },
+```
+
 :two:
-Create config file for your bucket: `./config/plugins.js` with the code:
+Go to code editor to yout project folder and create config file for your bucket: `./config/plugins.js` (file `plugins.js` in `config` folder in the root of your Strapi project) with the code:
 
 ```javascript
 module.exports = ({ env })=>({
@@ -41,7 +54,7 @@ module.exports = ({ env })=>({
 ```
 
 :three:
-Create .env file.
+Create a .env file in the root of your Strapi project.
 
 Example of `.env.local`:
 
@@ -58,6 +71,6 @@ YANDEX_CLOUD_BUCKET="strapi-backet-test"
 :four:
 Test the new uploader.
 
-1. Start Strapi dev server: `npm run develop`
+1. Start Strapi dev server: `npm run develop`.
 
-2. Open [Strapi media library](http://localhost:1337/admin/plugins/upload) and upload test image.
+2. Open [Strapi media library](http://localhost:1337/admin/plugins/upload) in a browser and upload a test image.
