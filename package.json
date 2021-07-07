@@ -1,0 +1,39 @@
+{
+  "name": "strapi-provider-upload-yandex-cloud",
+  "version": "3.6.5",
+  "description": "Yandex Cloud provider for Strapi upload plugin",
+  "homepage": "http://strapi.io",
+  "keywords": [
+    "upload",
+    "yandex cloud",
+    "object storage",
+    "strapi",
+    "provider"
+  ],
+  "directories": {
+    "lib": "./lib"
+  },
+  "main": "./lib",
+  "dependencies": {
+    "aws-sdk": "2.940.0"
+  },
+  "strapi": {
+    "isProvider": true
+  },
+  "author": {
+    "email": "teine@teine.ru",
+    "name": "Yana Moskvina"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/teinett/strapi-provider-upload-yandex-cloud.git"
+  },
+  "bugs": {
+    "url": "https://github.com/teinett/strapi-provider-upload-yandex-cloud/issues"
+  },
+  "engines": {
+    "node": ">= 10.0.0",
+    "npm": ">= 6.0.0"
+  },
+  "license": "MIT"
+}
