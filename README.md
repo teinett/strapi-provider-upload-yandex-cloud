@@ -16,9 +16,7 @@ Create Strapi project: `npx create-strapi-app strapi-yandex-cloud --quickstart`
 
 Install upload plugin: `npm i -S strapi-provider-upload-yandex-cloud`
 
-Create config file for your bucket: `./config/plugins.js`
-
-Add the code to the file ./config/plugins.js:
+Create config file for your bucket: `./config/plugins.js` with the code:
 
 ```
 module.exports = ({ env })=>({
@@ -36,9 +34,7 @@ module.exports = ({ env })=>({
   },
 });
 ```
-Create .env file
-
-Exmaple of `.env.local`:
+Create .env file. Example of `.env.local`:
 
 ```
 HOST=0.0.0.0
@@ -52,4 +48,4 @@ YANDEX_CLOUD_BUCKET="strapi-backet-test"
 
 Start Strapi dev server: `npm run develop`
 
-Open Strapi media library: http://localhost:1337/admin/plugins/upload and upload test image.
+Open (Strapi media library)[http://localhost:1337/admin/plugins/upload] and upload test image.
