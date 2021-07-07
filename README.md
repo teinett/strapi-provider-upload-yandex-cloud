@@ -12,13 +12,17 @@ Docs: https://cloud.yandex.com/en/docs/storage/
 
 ## Example
 
+:zero:
 Create Strapi project: `npx create-strapi-app strapi-yandex-cloud --quickstart`
+After successful creating the project sopt the dev server: `CTRL + C`
 
+:one:
 Install upload plugin: `npm i -S strapi-provider-upload-yandex-cloud`
 
+:two:
 Create config file for your bucket: `./config/plugins.js` with the code:
 
-```
+```javascript
 module.exports = ({ env })=>({
   upload: {
     provider: 'yandex-cloud',
@@ -34,6 +38,8 @@ module.exports = ({ env })=>({
   },
 });
 ```
+
+:three:
 Create .env file. Example of `.env.local`:
 
 ```
@@ -46,6 +52,9 @@ YANDEX_CLOUD_REGION="ru-central1"
 YANDEX_CLOUD_BUCKET="strapi-backet-test"
 ```
 
-Start Strapi dev server: `npm run develop`
+:four:
+Test the new uploader.
 
-Open (Strapi media library)[http://localhost:1337/admin/plugins/upload] and upload test image.
+1. Start Strapi dev server: `npm run develop`
+
+2. Open [Strapi media library](http://localhost:1337/admin/plugins/upload) and upload test image.
