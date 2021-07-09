@@ -8,10 +8,10 @@ Pre-install: create Yandex.Cloud account and a bucket in Object storage.
 
 ## Parameters
 
-- YANDEX_CLOUD_ACCESS_KEY_ID - key ID (no quotes, example: `pg2ywMziH_9zeZfA7t3w`)
-- YANDEX_CLOUD_ACCESS_SECRET - key secret (in quotes, example: `"aTiO354YNpnO9zKjqBiP1U3nm3F3CoXGLYcldZBC"`)
-- YANDEX_CLOUD_REGION - bucket region (in quotes, example: `"ru-central1"`)
-- YANDEX_CLOUD_BUCKET - bucket name (in quotes, example: `"strapi-backet-test"`)
+- YANDEX_CLOUD_ACCESS_KEY_ID - key ID (example: `pg2ywMziH_9zeZfA7t3w`)
+- YANDEX_CLOUD_ACCESS_SECRET - key secret (example: `aTiO354YNpnO9zKjqBiP1U3nm3F3CoXGLYcldZBC`)
+- YANDEX_CLOUD_REGION - bucket region (example: `ru-central1`)
+- YANDEX_CLOUD_BUCKET - bucket name (example: `strapi-backet-test`)
 
 ## Example
 
@@ -33,7 +33,7 @@ After successful installation your package.json file will have a code:
 "dependencies": {
     ...
     "strapi": "3.6.5",
-    "strapi-provider-upload-yandex-cloud": "1.0.0",
+    "strapi-provider-upload-yandex-cloud": "1.1.0",
     ...
   },
 ```
@@ -70,9 +70,9 @@ HOST=0.0.0.0
 PORT=1337
 
 YANDEX_CLOUD_ACCESS_KEY_ID=pg2ywMziH_9zeZfA7t3w
-YANDEX_CLOUD_ACCESS_SECRET="aTiO354YNpnO9zKjqBiP1U3nm3F3CoXGLYcldZBC"
-YANDEX_CLOUD_REGION="ru-central1"
-YANDEX_CLOUD_BUCKET="strapi-backet-test"
+YANDEX_CLOUD_ACCESS_SECRET=aTiO354YNpnO9zKjqBiP1U3nm3F3CoXGLYcldZBC
+YANDEX_CLOUD_REGION=ru-central1
+YANDEX_CLOUD_BUCKET=strapi-backet-test
 ```
 
 :four:
