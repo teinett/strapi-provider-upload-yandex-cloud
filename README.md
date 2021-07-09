@@ -16,11 +16,13 @@ Pre-install: create Yandex.Cloud account and a bucket in Object storage.
 ## Example
 
 :zero:
+
 Create Strapi project ([docs](https://strapi.io/documentation/developer-docs/latest/getting-started/quick-start.html)): `npx create-strapi-app strapi-yandex-cloud-project --quickstart`.
 
 After successfully creating the project stop the dev server: `CTRL + C`.
 
 :one:
+
 Install upload plugin: `npm i -S strapi-provider-upload-yandex-cloud`.
 
 Note: Be sure that you are in a folder with your Strapi project: `cd strapi-yandex-cloud-project`.
@@ -37,6 +39,7 @@ After successful installation your package.json file will have a code:
 ```
 
 :two:
+
 Go to code editor to yout project folder and create config file for your bucket: `./config/plugins.js` (file `plugins.js` in `config` folder in the root of your Strapi project) with the code:
 
 ```javascript
@@ -57,6 +60,7 @@ module.exports = ({ env }) => ({
 ```
 
 :three:
+
 Create a .env file in the root of your Strapi project.
 
 Example of `.env.local`:
@@ -72,6 +76,7 @@ YANDEX_CLOUD_BUCKET="strapi-backet-test"
 ```
 
 :four:
+
 Test the new uploader.
 
 1. Start Strapi dev server: `npm run develop`.
