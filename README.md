@@ -48,11 +48,11 @@ module.exports = ({ env }) => ({
     provider: 'yandex-cloud',
     providerOptions: {
       endpoint: 'https://storage.yandexcloud.net',
-      accessKeyId: env('YANDEX_CLOUD_ACCESS_KEY_ID'),
-      secretAccessKey: env('YANDEX_CLOUD_ACCESS_SECRET'),
-      region: env('YANDEX_CLOUD_REGION'),
+      accessKeyId: process.env.YANDEX_CLOUD_ACCESS_KEY_ID,
+      secretAccessKey: process.env.YANDEX_CLOUD_ACCESS_SECRET,
+      region: process.env.YANDEX_CLOUD_REGION,
       params: {
-        Bucket: env('YANDEX_CLOUD_BUCKET'),
+        Bucket: process.env.YANDEX_CLOUD_BUCKET,
       },
     },
   },
