@@ -11,7 +11,7 @@ Pre-install: create Yandex.Cloud account and a bucket in Object storage.
 - YANDEX_CLOUD_ACCESS_KEY_ID - key ID (example: `pg2ywMziH_9zeZfA7t3w`)
 - YANDEX_CLOUD_ACCESS_SECRET - key secret (example: `aTiO354YNpnO9zKjqBiP1U3nm3F3CoXGLYcldZBC`)
 - YANDEX_CLOUD_REGION - bucket region (example: `ru-central1`)
-- YANDEX_CLOUD_BUCKET - bucket name (example: `strapi-backet-test`)
+- YANDEX_CLOUD_BUCKET - bucket name (example: `strapi-bucket-test`)
 
 ## Example
 
