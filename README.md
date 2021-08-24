@@ -1,8 +1,8 @@
 # Strapi Upload Provider for Yandex.Cloud Object Storage
 
-Yandex.Cloud: https://cloud.yandex.com/en/services/storage
+Yandex.Cloud: <https://cloud.yandex.com/en/services/storage>
 
-Docs: https://cloud.yandex.com/en/docs/storage/
+Docs: <https://cloud.yandex.com/en/docs/storage/>
 
 Pre-install: create Yandex.Cloud account and a bucket in Object storage.
 
@@ -40,7 +40,7 @@ After successful installation your package.json file will have a code:
 
 :two:
 
-Go to code editor to yout project folder and create config file for your bucket: `./config/plugins.js` (file `plugins.js` in `config` folder in the root of your Strapi project) with the code:
+Go to code editor to your project folder and create config file for your bucket: `./config/plugins.js` (file `plugins.js` in `config` folder in the root of your Strapi project) with the code:
 
 ```javascript
 module.exports = ({ env }) => ({
@@ -53,11 +53,15 @@ module.exports = ({ env }) => ({
       region: process.env.YANDEX_CLOUD_REGION,
       params: {
         Bucket: process.env.YANDEX_CLOUD_BUCKET,
-      },
-    },
-  },
+        CacheControl: "public, max-age=864000"
+      }
+    }
+  }
 });
 ```
+
+**NOTE**
+You can pass aws s3 params  in params object, such as CacheControl, ContentEncoding, etc. More params at: <https://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/S3.html>
 
 :three:
 
