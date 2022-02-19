@@ -1,6 +1,6 @@
 {
   "name": "strapi-provider-upload-yandex-cloud",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Yandex Cloud provider for Strapi upload plugin",
   "homepage": "http://strapi.io",
   "keywords": [
@@ -15,7 +15,8 @@
   },
   "main": "./lib",
   "dependencies": {
-    "aws-sdk": "^2.1077.0"
+    "aws-sdk": "^2.1077.0",
+    "lodash": "4.17.21"
   },
   "strapi": {
     "isProvider": true
