@@ -4,8 +4,6 @@ Plugin version 1 works with Strapi 3.
 
 Plugin version 2 works with Strapi 4.
 
-NOTE: If it doesn't work, install the [original aws-s3 upload provider from Strapi](https://github.com/strapi/strapi/tree/master/packages/providers/upload-aws-s3) and go to step 2.
-
 ---
 
 Yandex.Cloud: <https://cloud.yandex.com/en/services/storage>
@@ -26,24 +24,26 @@ npm install strapi-provider-upload-yandex-cloud --save
 
 ## Parameters
 
-- YANDEX_CLOUD_ACCESS_KEY_ID - key ID (example: `pg2ywMziH_9zeZfA7t3w`)
-- YANDEX_CLOUD_ACCESS_SECRET - key secret (example: `aTiO354YNpnO9zKjqBiP1U3nm3F3CoXGLYcldZBC`)
-- YANDEX_CLOUD_REGION - bucket region (example: `ru-central1`)
-- YANDEX_CLOUD_BUCKET - bucket name (example: `strapi-bucket-test`)
+| Parameter  | Description | Example |
+| ------------- | ------------- | ------------- |
+| YANDEX_CLOUD_ACCESS_KEY_ID | key ID | `pg2ywMziH_9zeZfA7t3w` |
+| YANDEX_CLOUD_ACCESS_SECRET | key secret | `aTiO354YNpnO9zKjqBiP1U3nm3F3CoXGLYcldZBC` |
+| YANDEX_CLOUD_REGION | bucket region | `ru-central1` |
+| YANDEX_CLOUD_BUCKET | bucket name | `strapi-bucket-test` |
 
 ## Example
 
 :zero:
 
-Create Strapi project ([docs](https://strapi.io/documentation/developer-docs/latest/getting-started/quick-start.html)): `npx create-strapi-app strapi-yandex-cloud-project --quickstart`.
+Create Strapi project: ([docs](https://strapi.io/documentation/developer-docs/latest/getting-started/quick-start.html)).
 
 After successfully creating the project stop the dev server: `CTRL + C`.
 
 :one:
 
-Install upload plugin: `npm i -S strapi-provider-upload-yandex-cloud`.
+Install upload plugin: `npm install strapi-provider-upload-yandex-cloud --save`.
 
-Note: Be sure that you are in a folder with your Strapi project: `cd strapi-yandex-cloud-project`.
+NOTE: Be sure that you are in a folder with your Strapi project: `cd strapi-yandex-cloud-project`.
 
 After successful installation your package.json file will have a code:
 
@@ -51,7 +51,7 @@ After successful installation your package.json file will have a code:
 "dependencies": {
     ...
     "strapi": "4.1.0",
-    "strapi-provider-upload-yandex-cloud": "2.0.0",
+    "strapi-provider-upload-yandex-cloud": "^2.0.3",
     ...
   },
 ```
@@ -85,7 +85,7 @@ module.exports = ({ env }) => ({
 module.exports = ({ env }) => ({
   upload: {
     config: {
-      provider: 'yandex-cloud',
+      provider: 'strapi-provider-upload-yandex-cloud',
       providerOptions: {
         endpoint: 'https://storage.yandexcloud.net',
         accessKeyId: env('YANDEX_CLOUD_ACCESS_KEY_ID'),
@@ -109,27 +109,34 @@ You can pass aws s3 params  in params object, such as CacheControl, ContentEncod
 Go to code editor to your project folder and create config file for your bucket: `./config/middlewares.js` (file `middlewares.js` in `config` folder in the root of your Strapi project) with the code:
 
 ```javascript
+const BUCKET = process.env.YANDEX_CLOUD_BUCKET;
+const BUCKET_URL = `https://${BUCKET}.storage.yandexcloud.net`;
+
 module.exports = [
-  // ...
+  'strapi::errors',
+  'strapi::cors',
+  'strapi::poweredBy',
+  'strapi::logger',
+  'strapi::query',
+  'strapi::body',
+  'strapi::favicon',
+  'strapi::public',
   {
     name: 'strapi::security',
     config: {
       contentSecurityPolicy: {
         useDefaults: true,
         directives: {
-            'connect-src': ["'self'", 'https:'],
-            'img-src': ["'self'", 'data:', 'blob:', 'storage.yandexcloud.net/<YANDEX_CLOUD_BUCKET>'],
-            'media-src': ["'self'", 'data:', 'blob:', 'storage.yandexcloud.net/<YANDEX_CLOUD_BUCKET>'],
+          'connect-src': ["'self'", 'https:'],
+          'img-src': ["'self'", 'data:', 'blob:', BUCKET_URL],
+          'media-src': ["'self'", 'data:', 'blob:', BUCKET_URL],
           upgradeInsecureRequests: null,
         },
       },
     },
   },
-  // ...
 ];
 ```
-
-NOTE: <YANDEX_CLOUD_BUCKET> is your bucket name. Change it in the code above.
 
 :three:
 
