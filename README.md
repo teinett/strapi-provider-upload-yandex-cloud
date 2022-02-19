@@ -6,6 +6,8 @@ Plugin version 2 works with Strapi 4.
 
 NOTE: If it doesn't work, install the [original aws-s3 upload provider from Strapi](https://github.com/strapi/strapi/tree/master/packages/providers/upload-aws-s3) and go to step 2.
 
+---
+
 Yandex.Cloud: <https://cloud.yandex.com/en/services/storage>
 
 Docs: <https://cloud.yandex.com/en/docs/storage/>
