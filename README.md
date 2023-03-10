@@ -35,7 +35,7 @@ npm install strapi-provider-upload-yandex-cloud --save
 
 :zero:
 
-Create Strapi project: ([docs](https://strapi.io/documentation/developer-docs/latest/getting-started/quick-start.html)).
+Create Strapi project: ([docs](https://docs.strapi.io/dev-docs/quick-start)).
 
 After successfully creating the project stop the dev server: `CTRL + C`.
 
@@ -50,8 +50,8 @@ After successful installation your package.json file will have a code:
 ```
 "dependencies": {
     ...
-    "strapi": "4.1.0",
-    "strapi-provider-upload-yandex-cloud": "^2.0.3",
+    "strapi": "^4.7.0",
+    "strapi-provider-upload-yandex-cloud": "^2.0.4",
     ...
   },
 ```
@@ -60,24 +60,7 @@ After successful installation your package.json file will have a code:
 
 Go to code editor to your project folder and create config file for your bucket: `./config/plugins.js` (file `plugins.js` in `config` folder in the root of your Strapi project) with the code:
 
-*Strapi v3*:
-```javascript
-module.exports = ({ env }) => ({
-  upload: {
-    provider: 'yandex-cloud',
-    providerOptions: {
-      endpoint: 'https://storage.yandexcloud.net',
-      accessKeyId: process.env.YANDEX_CLOUD_ACCESS_KEY_ID,
-      secretAccessKey: process.env.YANDEX_CLOUD_ACCESS_SECRET,
-      region: process.env.YANDEX_CLOUD_REGION,
-      params: {
-        Bucket: process.env.YANDEX_CLOUD_BUCKET,
-        CacheControl: "public, max-age=864000"
-      }
-    }
-  }
-});
-```
+
 
 *Strapi v4*:
 
@@ -136,6 +119,26 @@ module.exports = [
     },
   },
 ];
+```
+
+*Strapi v3* (not supported by Strapi since 2023):
+
+```javascript
+module.exports = ({ env }) => ({
+  upload: {
+    provider: 'yandex-cloud',
+    providerOptions: {
+      endpoint: 'https://storage.yandexcloud.net',
+      accessKeyId: process.env.YANDEX_CLOUD_ACCESS_KEY_ID,
+      secretAccessKey: process.env.YANDEX_CLOUD_ACCESS_SECRET,
+      region: process.env.YANDEX_CLOUD_REGION,
+      params: {
+        Bucket: process.env.YANDEX_CLOUD_BUCKET,
+        CacheControl: "public, max-age=864000"
+      }
+    }
+  }
+});
 ```
 
 :three:
